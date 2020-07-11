@@ -21,13 +21,13 @@ test("Gets the manager's id", () => {
     expect(manager.getId()).toEqual(expect.stringContaining(manager.id.toString()));
 });
 
-test("Gets the managers's email", () => {
+test("Gets the manager's email", () => {
     const manager = new Manager('Bruce Wayne', '2', 'darkknight@gmail.com', '101');
 
     expect(manager.getEmail()).toEqual(expect.stringContaining(manager.email.toString()));
 });
 
-test("Gets the managers's office number", () => {
+test("Gets the manager's office number", () => {
     const manager = new Manager('Bruce Wayne', '2', 'darkknight@gmail.com', '101');
 
     expect(manager.getOfficeNumber()).toEqual(expect.stringContaining(manager.officeNumber.toString()));
