@@ -2,18 +2,22 @@ const generateTeam = (team) => {
     let employees = '';
     for (i = 0; i < team.length; i++) {
         let uniqueInfo = '';
+        let uniqueIcon = '';
         if (team[i].role === 'Manager') { 
             uniqueInfo = `<li class="list-group-item">Office number: ${team[i].officeNumber}</li>`
+            uniqueIcon = `<h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${team[i].role}</h3>`
         } else if (team[i].role === 'Engineer') {
             uniqueInfo = `<li class="list-group-item">GitHub: <a href="https://github.com/${team[i].github}" target="_blank" rel="noopener noreferrer">${team[i].github}</a></li>`
+            uniqueIcon = `<h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${team[i].role}</h3>`
         } else if (team[i].role === 'Intern') {
             uniqueInfo = `<li class="list-group-item">School: ${team[i].school}</li>`
+            uniqueIcon = `<h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${team[i].role}</h3>`
         };
         employees +=
         `<div class="card employee-card border-primary shadow">
             <div class="card-header text-center text-white bg-primary">
                 <h2 class="card-title">${team[i].name}</h2>
-                <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${team[i].role}</h3>
+                ${uniqueIcon}
             </div>
             <div class="card-body">
                 <ul class="list-group">
